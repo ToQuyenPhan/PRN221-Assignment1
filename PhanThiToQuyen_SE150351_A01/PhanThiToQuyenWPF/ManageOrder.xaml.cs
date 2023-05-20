@@ -75,8 +75,8 @@ namespace PhanThiToQuyenWPF
                 {
                     OrderId = Int32.Parse(txtId.Text),
                     CustomerId = CustomerId,
-                    OrderDate = DateTime.Parse(txtOrderDate.Text),
-                    ShippedDate = DateTime.Parse(txtShippedDate.Text),
+                    OrderDate = DateTime.ParseExact(txtOrderDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                    ShippedDate = DateTime.ParseExact(txtShippedDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Total = decimal.Parse(txTotal.Text),
                     OrderStatus = txtStatus.Text
                 };

@@ -53,7 +53,7 @@ namespace PhanThiToQuyenWPF
                     City = txtCity.Text,
                     Country = txtCountry.Text,
                     Password = txtPassword.Text,
-                    Birthday = DateTime.Parse(txtBirthday.Text)
+                    Birthday = DateTime.ParseExact(txtBirthday.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
                 };
                 if(InsertOrUpdate == false)
                 {

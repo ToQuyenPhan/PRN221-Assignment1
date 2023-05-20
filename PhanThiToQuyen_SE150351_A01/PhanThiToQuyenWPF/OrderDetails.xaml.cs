@@ -160,8 +160,8 @@ namespace PhanThiToQuyenWPF
                 {
                     OrderId = Int32.Parse(txtId.Text),
                     CustomerId = Convert.ToInt32(cbCustomerName.SelectedValue),
-                    OrderDate = DateTime.Parse(txtOrderDate.Text),
-                    ShippedDate = DateTime.Parse(txtShippedDate.Text),
+                    OrderDate = DateTime.ParseExact(txtOrderDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                    ShippedDate = DateTime.ParseExact(txtShippedDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Total = decimal.Parse(txtTotal.Text),
                     OrderStatus = txtStatus.Text
 
@@ -198,8 +198,8 @@ namespace PhanThiToQuyenWPF
                 {
                     OrderId = Int32.Parse(txtId.Text),
                     CustomerId = Convert.ToInt32(cbCustomerName.SelectedValue),
-                    OrderDate = DateTime.Parse(txtOrderDate.Text),
-                    ShippedDate = DateTime.Parse(txtShippedDate.Text),
+                    OrderDate = DateTime.ParseExact(txtOrderDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                    ShippedDate = DateTime.ParseExact(txtShippedDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Total = decimal.Parse(txtTotal.Text),
                     OrderStatus = txtStatus.Text
                 };

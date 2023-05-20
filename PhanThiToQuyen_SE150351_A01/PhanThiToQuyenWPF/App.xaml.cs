@@ -21,6 +21,9 @@ namespace PhanThiToQuyenWPF
         private void ConfigureServices(ServiceCollection services)
         {
             services.AddSingleton(typeof(ICustomerRepository), typeof(CustomerRepository));
+            services.AddSingleton(typeof(IFlowerBouquetRepository), typeof(FlowerBouquetRepository));
+            services.AddSingleton(typeof(IOrderRepository), typeof(OrderRepository));
+            services.AddSingleton(typeof(IOrderDetailRepository), typeof(OrderDetailRepository));
         }
     }
 }
