@@ -1,0 +1,217 @@
+﻿<Window x:Class="PhanThiToQuyenWPF.OrderDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhanThiToQuyenWPF"
+        mc:Ignorable="d"
+        Title="Order Details" Height="800" Width="900" WindowStartupLocation="CenterScreen"
+        Loaded="OrderDetailWindow_Load">
+    <Border CornerRadius="12">
+    <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#060531" Offset="0"/>
+                <GradientStop Color="#1B1448" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                    <TextBlock Text="Order Details" Foreground="White" FontSize="25" 
+                               FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" Width="800">
+                        <StackPanel Width="400">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                <TextBlock Width="300" Text="Order ID" Foreground="DarkGray" FontSize="12" 
+                               FontWeight="Medium" FontFamily="Montserrat" Margin="0,10,0,0"/>
+                                <TextBox x:Name="txtId" FontSize="13" FontWeight="Medium" FontFamily="Montserrat"                            
+                             Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2" Width="300" Height="28" VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" Background="Transparent"/>
+                            </StackPanel>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                    <TextBlock Width="300" Text="Customer Name" Foreground="DarkGray" FontSize="12" 
+                               FontWeight="Medium" FontFamily="Montserrat" Margin="0,30,0,0"/>
+                                    <ComboBox x:Name="cbCustomerName" FontSize="13" FontWeight="Medium" FontFamily="Montserrat"                            
+                             Foreground="Black" BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2" Width="300" Height="28" VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" SelectedValuePath="Tag"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                    <TextBlock Width="300" Text="Order Date" Foreground="DarkGray" FontSize="12" 
+                               FontWeight="Medium" FontFamily="Montserrat" Margin="0,30,0,0"/>
+                                    <TextBox x:Name="txtOrderDate" FontSize="13" FontWeight="Medium" FontFamily="Montserrat"                            
+                             Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2" Width="300" Height="28" VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" Background="Transparent"/>
+                                </StackPanel>
+                            </StackPanel>
+                        <StackPanel Width="400">
+                            <StackPanel Orientation="Vertical" Margin="50,0,0,0">
+                                <TextBlock Width="300" Text="Shipped Date" Foreground="DarkGray" FontSize="12" 
+                               FontWeight="Medium" FontFamily="Montserrat" Margin="0,10,0,0"/>
+                                <TextBox x:Name="txtShippedDate" FontSize="13" FontWeight="Medium" FontFamily="Montserrat"                            
+                             Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2" Width="300" Height="28" VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" Background="Transparent"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Margin="50,0,0,0">
+                                <TextBlock Width="300" Text="Total" Foreground="DarkGray" FontSize="12" 
+                               FontWeight="Medium" FontFamily="Montserrat" Margin="0,30,0,0"/>
+                                <TextBox x:Name="txtTotal" FontSize="13" FontWeight="Medium" FontFamily="Montserrat"                            
+                             Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2" Width="300" Height="28" VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" Background="Transparent" IsReadOnly="True"/>
+                            </StackPanel>
+                                <StackPanel Orientation="Vertical" Margin="50,0,0,0">
+                                    <TextBlock Width="300" Text="Order Status" Foreground="DarkGray" FontSize="12" 
+                               FontWeight="Medium" FontFamily="Montserrat" Margin="0,30,0,0"/>
+                                    <TextBox x:Name="txtStatus" FontSize="13" FontWeight="Medium" FontFamily="Montserrat"                            
+                             Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2" Width="300" Height="28" VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" Background="Transparent"/>
+                                </StackPanel>
+                            </StackPanel>
+                    </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="btnSave" BorderThickness="0" Content="SAVE" Foreground="White"
+                            FontSize="12" FontFamily="Montserrat" Cursor="Hand" Margin="0,20,0,0"
+                                Click="btnSave_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#462AD8"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40" CornerRadius="20" 
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="btnLoad" BorderThickness="0" Content="LOAD" Foreground="White"
+                            FontSize="12" FontFamily="Montserrat" Cursor="Hand" Margin="20,20,0,0"
+                                Click="btnLoad_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#462AD8"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40" CornerRadius="20" 
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="btnAdd" BorderThickness="0" Content="ADD" Foreground="White"
+                            FontSize="12" FontFamily="Montserrat" Cursor="Hand" Margin="20,20,0,0"
+                                Click="btnAdd_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#462AD8"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40" CornerRadius="20" 
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="btnDelete" BorderThickness="0" Content="DELETE" Foreground="White"
+                            FontSize="12" FontFamily="Montserrat" Cursor="Hand" Margin="20,20,0,0"
+                                Click="btnDelete_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#462AD8"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40" CornerRadius="20" 
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="btnUpdate" BorderThickness="0" Content="UPDATE" Foreground="White"
+                            FontSize="12" FontFamily="Montserrat" Cursor="Hand" Margin="20,20,0,0"
+                                Click="btnUpdate_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#462AD8"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40" CornerRadius="20" 
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <TextBlock Name="message" Text="" Foreground="White" FontSize="15" Margin="0,20,0,0"
+                               FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Center"/>
+                    <ListView x:Name="lvOrderDetails" Margin="0,20,0,0" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Flower Bouquet ID" Width="200" 
+                                                DisplayMemberBinding="{Binding FlowerBouquetId}"/>
+                                <GridViewColumn Header="Unit Price" Width="300"
+                                                DisplayMemberBinding="{Binding UnitPrice}"/>
+                                    <GridViewColumn Header="Quantity" Width="200"
+                                                DisplayMemberBinding="{Binding Quantity}"/>
+                                    <GridViewColumn Header="Discount" Width="200"
+                                                DisplayMemberBinding="{Binding Discount}"/>
+                                </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+    </Border>
+</Window>
